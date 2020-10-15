@@ -16,10 +16,13 @@ public class NIOFileChannel03 {
             System.out.println(f);
         }*/
 
+        String resourcePath = "src" + File.separator + "main" + File.separator + "resources";
+        String sourceFilePath = resourcePath + File.separator + "1.txt";
+        String targetFilePath = resourcePath + File.separator + "2.txt";
 
-        FileInputStream fileInputStream = new FileInputStream("src\\main\\resources\\1.txt");
+        FileInputStream fileInputStream = new FileInputStream(sourceFilePath);
         FileChannel readChannel = fileInputStream.getChannel();
-        FileOutputStream fileOutputStream = new FileOutputStream("src\\main\\resources\\2.txt");
+        FileOutputStream fileOutputStream = new FileOutputStream(targetFilePath);
         FileChannel writeChannel = fileOutputStream.getChannel();
 
         ByteBuffer byteBuffer = ByteBuffer.allocate(32);

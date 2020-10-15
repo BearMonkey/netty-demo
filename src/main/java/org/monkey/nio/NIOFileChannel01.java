@@ -1,5 +1,6 @@
 package org.monkey.nio;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -9,8 +10,12 @@ public class NIOFileChannel01 {
     public static void main(String[] args) throws IOException {
         String str = "hello file channel!";
 
+        String resourcePath = "src" + File.separator + "main" + File.separator + "resources";
+
+        String targetPath = resourcePath + File.separator + "file01.txt";
+
         // 创建一个输出流 --> channel
-        FileOutputStream fileOutputStream = new FileOutputStream("d:\\file01.txt");
+        FileOutputStream fileOutputStream = new FileOutputStream(targetPath);
 
         // 实际的channel是FileChannelImpl
         FileChannel fileChannel = fileOutputStream.getChannel();

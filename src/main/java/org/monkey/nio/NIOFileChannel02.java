@@ -8,8 +8,13 @@ import java.nio.channels.FileChannel;
 
 public class NIOFileChannel02 {
     public static void main(String[] args) throws IOException {
+
+        String resourcePath = "src" + File.separator + "main" + File.separator + "resources";
+
+        String targetPath = resourcePath + File.separator + "file01.txt";
+
         // 创建文件的输入流
-        File file = new File("d:\\file01.txt");
+        File file = new File(targetPath);
 
         FileInputStream fileInputStream = new FileInputStream(file);
 
